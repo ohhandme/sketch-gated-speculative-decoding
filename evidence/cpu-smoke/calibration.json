@@ -1,0 +1,74 @@
+{
+  "config": {
+    "mode": "ours",
+    "rank": 4,
+    "sketch_dim": 128,
+    "sketch_nnz": 32,
+    "head_tokens": 32,
+    "theta": 0.002,
+    "quantile": 0.95,
+    "bandwidth_mbps": 10.0,
+    "rtt_ms": 30.0,
+    "draft_len": 4,
+    "fallback": "B",
+    "pipeline": true
+  },
+  "samples": 32,
+  "calibration_prompt": [
+    1755,
+    1284,
+    1202,
+    132,
+    85,
+    443,
+    1891,
+    2002
+  ],
+  "operating_theta": null,
+  "selection_budget": "fallback <= 10%, acceptance >= 95% of B1 (smoke proxy)",
+  "mean_kl_pq": 0.03229162773716113,
+  "quantiles": {
+    "q90": 0.0006347242317360724,
+    "q95": 0.0006383757135949963,
+    "q99": 0.0006412968990821355
+  },
+  "auc_flip": 0.08333333333333333,
+  "spearman_gap": 0.48533724340175943,
+  "flip_rate": 0.0625,
+  "mean_tv": 0.10064307223857379,
+  "sweep": [
+    {
+      "theta": 0.0006347242317360724,
+      "fallback_rate": 0.125,
+      "flip_rate_on_gated": 0.07142857142857142,
+      "flip_rate_overall": 0.0625,
+      "mean_tv": 0.10064307223857379,
+      "accept_rate": 0.625,
+      "bytes_per_step": 3082.0,
+      "ms_per_token": 20.487253570402284,
+      "observed_fallback": 0.125
+    },
+    {
+      "theta": 0.0006383757135949963,
+      "fallback_rate": 0.125,
+      "flip_rate_on_gated": 0.07142857142857142,
+      "flip_rate_overall": 0.0625,
+      "mean_tv": 0.10064307223857379,
+      "accept_rate": 0.625,
+      "bytes_per_step": 3082.0,
+      "ms_per_token": 21.17981071348092,
+      "observed_fallback": 0.125
+    },
+    {
+      "theta": 0.0006412968990821355,
+      "fallback_rate": 0.125,
+      "flip_rate_on_gated": 0.07142857142857142,
+      "flip_rate_overall": 0.0625,
+      "mean_tv": 0.10064307223857379,
+      "accept_rate": 0.625,
+      "bytes_per_step": 3082.0,
+      "ms_per_token": 21.740053572358423,
+      "observed_fallback": 0.125
+    }
+  ]
+}

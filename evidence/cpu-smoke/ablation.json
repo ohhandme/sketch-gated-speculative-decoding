@@ -1,0 +1,193 @@
+{
+  "config": {
+    "mode": "ours",
+    "rank": 4,
+    "sketch_dim": 128,
+    "sketch_nnz": 32,
+    "head_tokens": 32,
+    "theta": 0.002,
+    "quantile": 0.95,
+    "bandwidth_mbps": 10.0,
+    "rtt_ms": 30.0,
+    "draft_len": 4,
+    "fallback": "B",
+    "pipeline": true
+  },
+  "thetas": {
+    "q90": 0.0006347242317360724,
+    "q95": 0.0006383757135949963,
+    "q99": 0.0006412968990821355
+  },
+  "groups": {
+    "gate_on_off": [
+      {
+        "tau": 3.375,
+        "per_token_ms": 17.498802857150107,
+        "bytes_per_step": 3082.0,
+        "fallback_rate": 0.0,
+        "accept_rate": 0.84375,
+        "variant": "gate_off",
+        "theta": null
+      },
+      {
+        "tau": 3.375,
+        "per_token_ms": 17.09923142760285,
+        "bytes_per_step": 3082.0,
+        "fallback_rate": 0.0,
+        "accept_rate": 0.84375,
+        "variant": "gate_on",
+        "theta": 0.0006383757135949963
+      }
+    ],
+    "sync_vs_pipelined": [
+      {
+        "tau": 3.0,
+        "per_token_ms": 29.876568750148632,
+        "bytes_per_step": 19466.0,
+        "fallback_rate": 1.0,
+        "accept_rate": 0.75,
+        "variant": "sync_fallback",
+        "theta": 0.0
+      },
+      {
+        "tau": 3.0,
+        "per_token_ms": 17.86666562827222,
+        "bytes_per_step": 19466.0,
+        "fallback_rate": 1.0,
+        "accept_rate": 0.75,
+        "variant": "pipelined",
+        "theta": 0.0
+      }
+    ],
+    "theta_quantiles": [
+      {
+        "tau": 3.375,
+        "per_token_ms": 17.204220000813365,
+        "bytes_per_step": 3082.0,
+        "fallback_rate": 0.0,
+        "accept_rate": 0.84375,
+        "variant": "q90",
+        "theta": 0.0006347242317360724
+      },
+      {
+        "tau": 3.375,
+        "per_token_ms": 17.633751427323272,
+        "bytes_per_step": 3082.0,
+        "fallback_rate": 0.0,
+        "accept_rate": 0.84375,
+        "variant": "q95",
+        "theta": 0.0006383757135949963
+      },
+      {
+        "tau": 3.375,
+        "per_token_ms": 16.976128572524175,
+        "bytes_per_step": 3082.0,
+        "fallback_rate": 0.0,
+        "accept_rate": 0.84375,
+        "variant": "q99",
+        "theta": 0.0006412968990821355
+      }
+    ],
+    "rank_x_sketch": [
+      {
+        "tau": 2.25,
+        "per_token_ms": 21.065303845342214,
+        "bytes_per_step": 2554.0,
+        "fallback_rate": 0.25,
+        "accept_rate": 0.5625,
+        "variant": "r2_k64",
+        "rank": 2,
+        "sketch_dim": 64,
+        "theta": 0.0006383757135949963
+      },
+      {
+        "tau": 3.125,
+        "per_token_ms": 16.814354546008484,
+        "bytes_per_step": 3066.0,
+        "fallback_rate": 0.0,
+        "accept_rate": 0.78125,
+        "variant": "r2_k128",
+        "rank": 2,
+        "sketch_dim": 128,
+        "theta": 0.0006383757135949963
+      },
+      {
+        "tau": 3.125,
+        "per_token_ms": 18.63358787856321,
+        "bytes_per_step": 4090.0,
+        "fallback_rate": 0.0,
+        "accept_rate": 0.78125,
+        "variant": "r2_k256",
+        "rank": 2,
+        "sketch_dim": 256,
+        "theta": 0.0006383757135949963
+      },
+      {
+        "tau": 2.25,
+        "per_token_ms": 22.586826922283368,
+        "bytes_per_step": 2570.0,
+        "fallback_rate": 0.25,
+        "accept_rate": 0.5625,
+        "variant": "r4_k64",
+        "rank": 4,
+        "sketch_dim": 64,
+        "theta": 0.0006383757135949963
+      },
+      {
+        "tau": 3.375,
+        "per_token_ms": 17.277142857343673,
+        "bytes_per_step": 3082.0,
+        "fallback_rate": 0.0,
+        "accept_rate": 0.84375,
+        "variant": "r4_k128",
+        "rank": 4,
+        "sketch_dim": 128,
+        "theta": 0.0006383757135949963
+      },
+      {
+        "tau": 3.375,
+        "per_token_ms": 16.880294285606215,
+        "bytes_per_step": 4106.0,
+        "fallback_rate": 0.0,
+        "accept_rate": 0.84375,
+        "variant": "r4_k256",
+        "rank": 4,
+        "sketch_dim": 256,
+        "theta": 0.0006383757135949963
+      },
+      {
+        "tau": 2.25,
+        "per_token_ms": 19.020088459817977,
+        "bytes_per_step": 2602.0,
+        "fallback_rate": 0.25,
+        "accept_rate": 0.5625,
+        "variant": "r8_k64",
+        "rank": 8,
+        "sketch_dim": 64,
+        "theta": 0.0006383757135949963
+      },
+      {
+        "tau": 3.375,
+        "per_token_ms": 16.817885715272332,
+        "bytes_per_step": 3114.0,
+        "fallback_rate": 0.0,
+        "accept_rate": 0.84375,
+        "variant": "r8_k128",
+        "rank": 8,
+        "sketch_dim": 128,
+        "theta": 0.0006383757135949963
+      },
+      {
+        "tau": 3.375,
+        "per_token_ms": 16.700597142465902,
+        "bytes_per_step": 4138.0,
+        "fallback_rate": 0.0,
+        "accept_rate": 0.84375,
+        "variant": "r8_k256",
+        "rank": 8,
+        "sketch_dim": 256,
+        "theta": 0.0006383757135949963
+      }
+    ]
+  }
+}

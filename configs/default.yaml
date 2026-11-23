@@ -1,0 +1,56 @@
+# Default configuration for the sketch-gated uplink reference implementation.
+# Model paths may be "tiny" (random Qwen3 for CPU checks) or a HF directory.
+model:
+  draft: tiny
+  target: tiny
+  vocab_size: 2048
+  draft_hidden: 64
+  draft_layers: 2
+  target_hidden: 96
+  target_layers: 3
+  heads: 4
+  kv_heads: 2
+  intermediate: 128
+  prompt_len: 8
+
+sketch:
+  dim: 128
+  nnz: 32
+  kind: sparse_pm1
+  seed: 1234
+
+lowrank:
+  rank: 4
+  power_iters: 1
+  damping: 0.5
+  delta_threshold: 1.0e-3
+  update_every: 8
+  max_delta_entries: 512
+
+head:
+  tokens: 32
+
+gate:
+  theta: 0.002
+  quantile: 0.95
+  score: l1
+  adaptive: false
+  ema_window: 500
+  adapt_step: 1.0e-3
+  target_fallback: 0.10
+
+channel:
+  bandwidth_mbps: 10.0
+  rtt_ms: 30.0
+  protocol_overhead_bytes: 64
+  downlink_bytes: 8
+
+run:
+  draft_len: 4
+  seed: 42
+  max_steps: 32
+  mode: ours
+  fallback: B
+  pipeline: true
+  bonus: true
+  q_dtype: float16
